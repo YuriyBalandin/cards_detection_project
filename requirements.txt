@@ -1,9 +1,4 @@
-stqdm
 torch
-opencv-python
-folium
-streamlit_folium
-pyyaml
 torchvision
 matplotlib
 seaborn

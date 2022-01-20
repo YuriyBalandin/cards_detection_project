@@ -1,27 +1,15 @@
 import sys
 from streamlit import cli as stcli
 
-from folium.plugins import HeatMap
-import folium
-from streamlit_folium import folium_static
-
-import tempfile
-
 import streamlit as st
 import pandas as pd
 import numpy as np
+
 from PIL import Image
-import time
 import os
-import json
 
 import torch
-import cv2
 
-from stqdm import stqdm
-
-import tkinter as tk
-from tkinter import filedialog
 
 @st.cache()
 def load_model(path='yolov5/runs/train/exp6/weights/best.pt'):
@@ -48,7 +36,6 @@ def main():
     st.title('Детекция игральных карт')
 
     model = load_model('best.pt')
-
 
     st.header('Обработка фото')
     file = st.file_uploader('Загрузите изображение')

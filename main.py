@@ -25,9 +25,9 @@ def detect_image(image, model):
         if pred_df.confidence.iloc[0] > 0.5:
             return pred_image, pred_df.name.iloc[0]
         else:
-            return pred_image, 'Неизвестное животное'
+            return pred_image, 'Неизвестная карта'
     else:
-        return pred_image, 'Нет животного'
+        return pred_image, 'Нет карты'
 
 
 
@@ -43,7 +43,7 @@ def main():
         image = np.array(Image.open(file))
         image, pred = detect_image(image, model)
         st.header('Результаты распознавания')
-        st.metric('Вид', pred)
+        st.metric('Тип карты', pred)
         st.image(image)
 
 
